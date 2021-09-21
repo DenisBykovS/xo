@@ -1,0 +1,37 @@
+
+<!--<div class="container">-->
+<!--  <div class="element mb-3 ">-->
+<!--    <img src="{{post.imageSrc}}" alt="">-->
+<!--    <p>{{post.text}}</p>-->
+<!--    <div  class="block-btn">-->
+<!--      <button  class="btn btn-primary">-->
+<!--        редактировать-->
+<!--      </button>-->
+<!--      <button  class="btn btn-danger">-->
+<!--        удалить-->
+<!--      </button>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<div class="container">
+  <form action="" [formGroup]="form" (submit)="updatePost()">
+
+    <input
+      style="width: 100%; padding: 2rem; margin-top: 1rem"
+      formControlName="text" type="text" [value]="textValidator">
+    <hr>
+    <div class="image">
+      <img class="preview" [src]="imagePrev ? imagePrev : post.imageSrc" alt="image">
+    </div>
+    <hr>
+    <input
+      (change)="onFileUpload($event)"
+      type="file" style="display: none" #input>
+    <button
+      (click)="trigger()"
+      [disabled]="form.disabled"
+      style="padding: 0.5rem; margin: 1rem 0" class="block-btn" type="button">загрузить изображение</button>
+    <br>
+    <button style="padding: 0.5rem" сlass="btn btn-danger" type="submit" [disabled]="form.invalid">сохранить</button>
+  </form>
+</div>

@@ -1,0 +1,66 @@
+<div class="container">
+  <main class="form-signin text-center ">
+
+    <form [formGroup]="form" (ngSubmit)="addUser()">
+      <h1 class="h3 mb-3 fw-normal">Регистрация нового пользвателя</h1>
+
+      <div class="form-floating mb-3" >
+        <input type="text" class="form-control"
+               id="floatingName" placeholder="Name" formControlName="name">
+        <div
+          *ngIf="form.get('name').invalid && form.get('name').touched"
+          class="validation">
+          <small>Поле обезательнно для заполнения</small>
+        </div>
+      </div>
+      <div class="form-floating mb-3" >
+        <input type="text" class="form-control"
+               id="floatingLogin" placeholder="Login" formControlName="login">
+        <div
+          *ngIf="form.get('login').invalid && form.get('login').touched"
+          class="validation">
+          <small>Поле обезательнно для заполнения</small>
+        </div>
+      </div>
+      <div class="form-floating mb-3" >
+        <input type="email" class="form-control"
+               id="floatingInput" placeholder="name@example.com" formControlName="email">
+        <div
+          *ngIf="form.get('email').invalid && form.get('email').touched"
+          class="validation">
+          <small *ngIf="form.get('email').errors.required">
+            Поле обезательнно для заполнения</small>
+          <small *ngIf="form.get('email').errors.email">
+            Введите коректный email</small>
+        </div>
+      </div>
+      <div class="form-floating mb-3" >
+        <input type="password" class="form-control"
+               id="floatingPassword" placeholder="Password" formControlName="password">
+        <div
+          *ngIf="form.get('password').invalid && form.get('password').touched"
+          class="validation">
+          <small *ngIf="form.get('password').errors.required">
+            Поле обезательнно для заполнения</small>
+          <small *ngIf="form.get('password').errors.minlength"
+          >Длина должна быть не менее {{ minLength}}</small>
+<!--          {{ form.get('password').errors.minlength }}-->
+        </div>
+      </div>
+<!--      <div class="form-floating mb-3">-->
+<!--        <input type="password" class="form-control"-->
+<!--               id="floatingPasswordRepeat" placeholder="Password repeat" formControlName="passwordRepeat">-->
+<!--        <div-->
+<!--          *ngIf="form.get('passwordRepeat').invalid && form.get('passwordRepeat').touched"-->
+<!--          class="validation">-->
+<!--          <small *ngIf="form.get('passwordRepeat').errors.required">-->
+<!--            Поле обезательнно для заполнения</small>-->
+<!--          <small *ngIf="form.get('passwordRepeat').errors.minlength"-->
+<!--          >Длина должна быть не менее {{ form.get('passwordRepeat').errors.minlength }}</small>-->
+<!--        </div>-->
+<!--      </div>-->
+      <button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="form.invalid">Зарегистрироватся</button>
+    </form>
+
+  </main>
+</div>

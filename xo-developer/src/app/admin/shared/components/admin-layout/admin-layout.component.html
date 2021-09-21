@@ -1,0 +1,25 @@
+/*eslint-disable */
+<nav class="bg-warning navbar">
+  <h2>
+    <a routerLink="['/portfolio']">Портфолио</a>
+  </h2>
+
+  <ul *ngIf="adminService.isAuth">
+    <li>
+      <a routerLink="['/admin', 'dashboard']">Главная</a>
+    </li>
+    <li>
+      <a routerLink="['/admin', 'create']">Создание поста</a>
+    </li>
+    <li>
+      <a routerLink="['/admin', 'message']">Сообщения</a>
+    </li>
+    <li>
+      <a href="#" (click)="logout()" routerLink="['/admin', 'login']">Выйти</a>
+    </li>
+  </ul>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

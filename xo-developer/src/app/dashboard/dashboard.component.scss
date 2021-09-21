@@ -1,0 +1,26 @@
+
+textarea{
+  width: 100%;
+  padding: .7rem;
+  border-radius: 5px;
+  border-color: lightgray;
+}
+
+textarea {
+  &.ng-invalid.ng-touched {
+    border-color: red;
+  }
+}
+
+input{
+  &.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+  &.ng-valid.ng-touched {
+    border: 1px solid green;
+  }
+}
+
+.validation{
+  color: red;
+}

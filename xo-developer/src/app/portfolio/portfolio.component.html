@@ -1,0 +1,6 @@
+<div class="container">
+  <div *ngFor="let post of posts" class="element mb-3 ">
+    <img [src]="post.imageSrc" alt="">
+    <p>{{post.text}}</p>
+  </div>
+</div>

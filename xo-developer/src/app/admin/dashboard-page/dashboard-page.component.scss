@@ -1,0 +1,14 @@
+.element{
+  border-bottom: 1px solid lightslategray;
+  overflow: hidden;
+}
+img{
+  max-width: 68rem;
+}
+
+.block-btn{
+  display: flex;
+  button{
+    margin: 10px 15px;
+  }
+}

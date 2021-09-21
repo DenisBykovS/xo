@@ -1,0 +1,21 @@
+<div class="container">
+  <form action="" [formGroup]="form" (submit)="addPost()">
+    <textarea
+      formControlName="text"
+      style="width: 100%; padding: 2rem; margin-top: 1rem"></textarea>
+    <hr>
+    <div class="image">
+      <img class="preview" [src]="imagePrev" alt="image" *ngIf="imagePrev">
+    </div>
+    <hr>
+    <input
+      (change)="onFileUpload($event)"
+      type="file" style="display: none" #input>
+    <button
+      (click)="trigger()"
+      [disabled]="form.disabled"
+      style="padding: 0.5rem; margin: 1rem 0" class="block-btn" type="button">загрузить изображение</button>
+    <br>
+    <button style="padding: 0.5rem" сlass="btn btn-danger" type="submit" [disabled]="form.invalid">сохранить</button>
+  </form>
+</div>

@@ -1,0 +1,16 @@
+.message{
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  div{
+    display: flex;
+    justify-content: space-between;
+  }
+  button{
+    border-radius: 5px;
+  }
+}
+.new{
+  background-color: cyan;
+}

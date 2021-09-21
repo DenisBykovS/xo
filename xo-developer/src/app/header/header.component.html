@@ -1,0 +1,23 @@
+<div class="container">
+  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+    <a routerLink="/" class="logo d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+     Xo-Developer
+    </a>
+
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+      <li><a routerLink="/" class="nav-link px-2 link-dark">Главная</a></li>
+      <li><a [routerLink]="['/portfolio']" class="nav-link px-2 link-dark">Портфолио</a></li>
+    </ul>
+
+    <div class="col-md-3 text-end block-buttons" *ngIf="!authService.isAuth; else authUser">
+      <button [routerLink]="['/auth']" type="button" class="btn btn-outline-primary me-2 mr-3">Войти</button>
+      <button [routerLink]="['/reg']" type="button" class="btn btn-primary">Регистрация</button>
+    </div>
+    <ng-template #authUser>
+      <div class="col-md-3 text-end block-buttons direction">
+        <button routerLink="/" type="button" class="btn btn-outline-primary me-2 mr-3" (click)="logoutUser()">Выйти</button>
+        <button [routerLink]="['/dashboard']" type="button" class="btn btn-primary">Личный кабинет</button>
+      </div>
+    </ng-template>
+  </header>
+</div>

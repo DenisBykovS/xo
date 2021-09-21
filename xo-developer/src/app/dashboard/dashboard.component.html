@@ -1,0 +1,27 @@
+<div class="container text-center">
+  <form [formGroup]="form" (submit)="messageGo()">
+    <h1 class="h3 mb-3 fw-normal">Пожалуйста введите сообщение</h1>
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control"
+             formControlName="heading" placeholder="Тема сообщения">
+      <div
+        *ngIf="form.get('heading').invalid && form.get('heading').touched"
+        class="validation">
+        <small *ngIf="form.get('heading').errors.required">
+          Поле обезательнно для заполнения</small>
+      </div>
+    </div>
+
+    <div class="form-floating mb-3">
+      <textarea placeholder="Оставьте свои контакты для связи, краткое описание вопроса и я с вами свяжусь"
+                formControlName="text" name="text" rows="5" class="mb-3 form-control"></textarea>
+      <div
+        *ngIf="form.get('text').invalid && form.get('text').touched"
+        class="validation">
+        <small *ngIf="form.get('text').errors.required">
+          Поле обезательнно для заполнения</small>
+      </div>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" [disabled]="form.invalid" type="submit">Отправить</button>
+  </form>
+</div>

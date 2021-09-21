@@ -1,0 +1,23 @@
+<div class="container">
+  <div
+    *ngFor="let message of messages"
+    class="message"
+    [class.new]="message.important">
+    <h2>{{message.author}}</h2>
+    <h2>{{message.heading}}</h2>
+    {{message.text}}
+    <div>
+      <p *ngIf="message.important; else noChecked">
+        Важное :
+        <input type="checkbox" checked name="checked" (change)="messageUpdate(message._id, !message.important)">
+      </p>
+      <ng-template #noChecked>
+        <p>
+          Важное :
+          <input type="checkbox"  name="checked" (change)="messageUpdate(message._id, !message.important)">
+        </p>
+      </ng-template>
+      <button class="btn-danger" (click)="remove(message._id)">удалить</button>
+    </div>
+  </div>
+</div>

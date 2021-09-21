@@ -1,0 +1,21 @@
+hr{
+  margin-top: 3rem;
+  opacity: 0;
+}
+
+.footer {
+  background: lightgray;
+  width: 100%;
+  padding: 1rem 8rem;
+  position: fixed;
+  bottom: 0;
+}
+
+#button {
+  position: fixed;
+  bottom: 0;
+  right: 10px;
+  cursor: pointer;
+  background: lightcoral;
+  padding: 16px;
+}

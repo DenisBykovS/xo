@@ -1,0 +1,32 @@
+{
+  "name": "xo",
+  "version": "1.0.0",
+  "description": "angular js ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index",
+    "server": "nodemon index",
+    "client-install": "npm install --prefix xo-developer",
+    "client": "npm run start --prefix xo-developer",
+    "dev": "concurrently \"npm run server\" \"npm run client\" "
+  },
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "cors": "*",
+    "express": "*",
+    "jsonwebtoken": "*",
+    "moment": "^2.29.1",
+    "mongoose": "*",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "passport": "*",
+    "passport-jwt": "*"
+  },
+  "author": "denis1987m@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^6.2.0"
+  }
+}
